@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D3D3D3;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventoryprogramwgu.View_Controller.AddProductScreenController">
+   <children>
+      <AnchorPane layoutX="6.0" layoutY="77.0" prefHeight="250.0" prefWidth="225.0">
+         <children>
+            <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Label text="ID" />
+                  <Label text="Name" />
+                  <Label text="Inv" />
+                  <Label text="Price" />
+                  <Label text="Min" />
+                  <Label text="Max" />
+               </children>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </VBox>
+            <VBox layoutX="110.0" prefHeight="200.0" prefWidth="100.0" spacing="12.0">
+               <children>
+                  <TextField fx:id="productIDField" editable="false" promptText="Auto-Gen ID" />
+                  <TextField fx:id="productNameField" promptText="Product Name" />
+                  <TextField fx:id="invAmountField" promptText="Amount in Stock" />
+                  <TextField fx:id="priceField" promptText="Price to Sell At" />
+                  <TextField fx:id="minAmountField" promptText="Minimum on Hand">
+                     <font>
+                        <Font size="10.0" />
+                     </font></TextField>
+                  <TextField fx:id="maxAmountField" promptText="Max on Hand">
+                     <font>
+                        <Font size="10.0" />
+                     </font></TextField>
+               </children>
+               <padding>
+                  <Insets top="1.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Label layoutX="46.0" layoutY="40.0" text="ADD PRODUCT">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="252.0" layoutY="2.0" prefHeight="315.0" prefWidth="349.0">
+         <children>
+            <VBox alignment="TOP_RIGHT" layoutY="62.0" prefHeight="250.0" prefWidth="349.0">
+               <children>
+                  <TableView fx:id="partsTable" prefHeight="125.0" prefWidth="349.0">
+                    <columns>
+                      <TableColumn fx:id="partIDColumn" prefWidth="75.0" text="Part ID" />
+                      <TableColumn fx:id="partNameColumn" prefWidth="75.0" text="Part Name" />
+                        <TableColumn fx:id="invColumn" prefWidth="100.0" text="Inventory Level" />
+                        <TableColumn fx:id="priceColumn" prefWidth="100.0" text="Price Per Unit" />
+                    </columns>
+                  </TableView>
+                  <Button mnemonicParsing="false" onAction="#addPartButtonPushed" text="ADD" textAlignment="CENTER" />
+                  <TableView fx:id="addedPartsTable" prefHeight="125.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="partIDColumnTable2" prefWidth="75.0" text="Part ID" />
+                      <TableColumn fx:id="partNameColumnTable2" prefWidth="75.0" text="Part Name" />
+                        <TableColumn fx:id="invColumnTable2" prefWidth="100.0" text="Inventory Level" />
+                        <TableColumn fx:id="priceColumnTable2" prefWidth="100.0" text="Price Per Unit" />
+                    </columns>
+                  </TableView>
+                  <Button mnemonicParsing="false" onAction="#deletePartButtonPushed" text="DELETE" />
+               </children>
+            </VBox>
+            <Button layoutX="150.0" layoutY="20.0" mnemonicParsing="false" onAction="#SearchTable" text="Search" />
+            <TextField fx:id="searchPartBox" layoutX="201.0" layoutY="20.0" />
+         </children>
+         <padding>
+            <Insets right="15.0" />
+         </padding>
+      </AnchorPane>
+      <Button layoutX="442.0" layoutY="347.0" mnemonicParsing="false" onAction="#saveButtonPushed" text="Save" />
+      <Button layoutX="509.0" layoutY="347.0" mnemonicParsing="false" onAction="#cancelButtonPushed" text="Cancel" />
+   </children>
+</AnchorPane>
